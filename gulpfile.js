@@ -41,7 +41,10 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', ['browser-sync','sass','css-build','html-build', 'js-build'], function() {
-	gulp.watch('app/sass/**/*.scss', ['sass']);
+	gulp.watch('app/sass/**/*.scss', function(event, cb) {
+        setTimeout(function(){gulp.start('sass');},500) // задача выполниться через 500 миллисекунд и файл успеет сохраниться на диске
+    });
+	
 	gulp.watch('app/css/*.css', ['css-build']);
 	gulp.watch('app/js/*.js', ['js-build']);
 	gulp.watch('app/**/*.html', ['html-build']);

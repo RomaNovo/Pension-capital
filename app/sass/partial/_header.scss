@@ -1,0 +1,54 @@
+.header {
+	background-color: $color-white;
+	
+	&__top {
+		padding: 12px 0 12px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		
+		@include large-screen() {
+			justify-content: space-around;
+		}
+	}
+
+	&__burger-menu {	
+	}
+
+	&__menu {
+		display: none;
+
+		@include medium-screen() {
+			display: block;
+			flex: 0 1 360px;
+		}
+
+		@include large-screen() {
+			display: block;
+			flex: 0 1 610px;
+		}
+
+		@include extra-large-screen() {
+			display: block;
+			flex: 0 1 710px;
+		}
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		margin-right: -2px;
+	}
+
+	&__banner {
+		width: 100%;
+		display: flex;
+		flex-flow: column;	
+		box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.42);
+
+		@include medium-screen() {
+			box-shadow: none;
+		}
+	}	
+}

@@ -8,11 +8,11 @@ icon.addEventListener('click', function() {
 		v.classList.toggle('brg-icon__elem_open');
  	});
 
-	if(iconElement[0].classList.contains('brg-icon__elem_open')) {
+	/*if(iconElement[0].classList.contains('brg-icon__elem_open')) {
 	 	menuBlock.style.left = '20px';
 	}  else {
 		menuBlock.style.left = '-999px';
-	}
+	}*/
 
 })
  

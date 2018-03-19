@@ -1,0 +1,69 @@
+.above-footer {
+	padding-top: 40px;
+	padding-bottom: 50px;
+	background-color: white;
+
+	@include large-screen() {
+		padding-bottom: 65px;
+	}
+
+	&__title {
+		text-align: center;
+		font-family: $font-main;
+		font-size: 100px;
+		color: $color-main;
+	}
+
+	&__text {
+		margin: 0 auto;
+		max-width: 355px;
+		text-align: center;
+		font-family: $font-mainSBold;
+		font-size: 24px;
+		color: #555555;
+	}
+
+	&__social {
+		padding-top: 35px;
+	}
+}
+
+.social {
+	margin: 0 auto;
+	display: flex;
+	max-width: 220px;
+	justify-content: space-between;
+		
+	&__elem {
+		
+	}
+
+	&__link {
+
+	}
+
+	&__i {
+		display: block;
+		height: 55px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		&_face-book {
+			width: 30px; 
+			background-image: url('../icons/f.png');	
+		}
+
+		&_youTube {
+			margin-top: 2px;
+			width: 70px;
+			background-image: url('../icons/yo.png');
+		}
+
+		&_insta {
+			margin-top: 2px;
+			width: 50px;
+			background-image: url('../icons/in.png');
+		}
+	}
+}

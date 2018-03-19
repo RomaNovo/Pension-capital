@@ -1,0 +1,63 @@
+.footer {
+	background: white;
+	border: 1px solid #a8a8a8;
+	padding: 10px 0 0;
+
+	@include medium-screen() {
+		padding: 0 0 10px;
+	}
+
+
+	&__content {
+
+		@include medium-screen() {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	&__elem {
+
+	}
+
+	&__copyright {
+		margin: 0 auto;
+		max-width: 275px;
+		font: 16px $font-main;
+		text-align: center;
+
+		@include medium-screen() {
+			max-width: 465px;
+			text-align: left;
+		}
+	}
+
+	&__dev-in {
+		margin: 0 auto;
+		padding-top: 10px;
+		max-width: 235px;
+	}
+}
+
+.dev-in {
+	display: flex;
+
+	&__text {
+		font: 18px $font-main;
+		
+	}
+
+	&__link {
+		display: block;
+		padding-left: 15px;
+	}
+
+	&__icon {
+		display: block;
+		width: 85px;
+		height: 30px;
+		background-image: url('../icons/forte-life.png');	
+		background-repeat: no-repeat;	
+	}
+}

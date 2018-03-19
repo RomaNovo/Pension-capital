@@ -1,0 +1,61 @@
+@import 'variables';
+@import 'mixins';
+
+.banner-error {
+	padding-top: 20px;
+	background: $color-white;
+	box-shadow: inset -2px 15px 32px -17px rgba(0,0,0,0.75);
+
+	@include large-screen() {
+		padding-top: 40px;
+		padding-bottom: 60px;
+	}
+
+	&__logo {
+		margin: 0 auto;
+		max-width: 380px;
+		height: 350px;
+
+		@include medium-screen() {
+			max-width: 635px;
+			height: 580px;
+		}
+	}
+
+	&__pic {
+		width: 100%;
+		height: auto;
+		display: block;	
+	}
+
+	&__home {
+		font: 21px $font-main;
+
+		@include medium-screen() {
+			font: 36px $font-main;
+		}
+	}
+
+	&__link {
+		display: block;
+		text-align: center;
+		color: $color-main;
+		text-decoration: none;
+		font-family: $font-mainBold;	
+	}	
+
+	&__title {
+		text-transform: uppercase;	
+		border-bottom: 1px solid $color-main;
+
+		@include medium-screen() {
+			border: none;
+		}
+	}
+
+	&__text {
+	 	color: #6a6a6a;
+	 	text-align: center;
+	}
+}
+

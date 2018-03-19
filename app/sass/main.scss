@@ -1,5 +1,11 @@
+
 @import 'variables';
 @import 'mixins';
+@import 'partial/header';
+@import 'partial/above-footer';
+@import 'partial/footer';
+@import '404';
+
 /* ----------------------------- Fonts ------------------------------- */
 
 @font-face {
@@ -41,7 +47,7 @@
 body {
 	@extend %reset;
 	background-image: url('../img/background.jpg');	
-	background-size: cover; 
+	background-size: cover;  
 } 
 
 * {
@@ -54,43 +60,26 @@ body {
 }
 
 .container {
-	margin: 0 20px;
+	margin: 0 auto;
+	padding: 0 20px;
+
+	@include large-screen() {
+		// padding: 0 30px; add header__top - js: sp-btw;
+	}
+
+	@include extra-large-screen() {
+		padding: 0;
+		max-width: 1200px;	
+	}
+
+
 }
 
 /* ----------------------------- General ----------------------------- */
 
 /* --------------------------- Header --------------------------------- */
 
-.header {
 
-	&__top {
-		display: flex;
-		justify-content: space-between;
-		
-		padding: 14px 0 8px;
-		align-items: center;
-	}
-
-	&__burger-menu {	
-	}
-
-	&__menu {
-		
-		flex: 0 1 350px;
-	}
-
-	&__logo {
-		display: flex;
-		align-items: center;
-		margin-right: -2px;
-	}
-
-	&__banner {
-		width: 100%;
-		display: flex;
-		flex-flow: column;		
-	}	
-}
 
 .burger-menu {
 
@@ -162,30 +151,74 @@ body {
 }
 
 .menu {
-	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	
-	
 	&__link {
 		display: block;
+		text-decoration: none;
+		color: $color-font;
+		font-family: $font-mainSBold;
+		font-size: 24px;
 	}
 
 	&__info {
 		display: flex;
 		flex: 0 1 170px;
 		justify-content: space-between;
+
+		@include large-screen() {
+			flex: 0 1 420px;
+		}
+
+		@include extra-large-screen() {
+			flex: 0 1 510px;
+		}
+
+
 	}
 
 	&__valuta {
 		display: flex;
 		justify-content: space-between;
 		flex: 0 1 100px;
+
+		@include large-screen() {
+			flex: 0 1 145px;
+		}
+
+		@include extra-large-screen() {
+			flex: 0 1 150px;
+		}
 	}
 
 	&__title {
-		display: flex;
+		display: none;
+
+		&_contact {
+			
+			@include large-screen() {
+				display: block;
+
+				&:hover {
+					color: $color-main;
+				}
+			}
+		}
+
+		&_phone {
+
+			@include large-screen() {
+				display: block;
+
+				&:hover {
+					color: $color-main;
+				}
+			}
+		}
+
+
 	}
 
 	&__i {
@@ -193,78 +226,125 @@ body {
 		height: 36px;
 		display: block;
 		background-size: contain;
-		
 		background-repeat: no-repeat;
-
 
 		&_user {
 			background-image: url('../icons/men.png');
+
+			&:hover {
+				background-image: url('../icons/men-.png');
+			}
 		}
 
 		&_contact {
-			background-image: url('../icons/map.png');	
+			background-image: url('../icons/map.png');
+
+			&:hover {
+				background-image: url('../icons/map-.png');
+			}	
+
+			@include large-screen() {
+				display: none;
+			}
 		}
 
 		&_phone {
-			background-image: url('../icons/tel.png');	
+			background-image: url('../icons/tel.png');
+
+			&:hover {
+				background-image: url('../icons/tel-.png');
+			}	
+
+			@include large-screen() {
+				display: none;
+			}
 		}
 
 		&_ua {
 			width: 40px;
 			height: 45px;
 			background-color: $color-main;
-			background-image: url('../icons/ua.png');
+			background-image: url('../img/grn.png');
 			background-size: 70%;
 			background-position: center;
 			box-shadow: 0 0 20px rgba(0,0,0,.5);
 			border: 2px solid white;
+			transition:  .3s;
+
+			&:hover {
+				background-color: white;
+				border-color: $color-main;
+				background-image: url('../img/grn-.png');
+			}
+
+			@include large-screen() {
+				width: 54px;
+				height: 57px;
+			}
 		}
 
 		&_buck {
 			width: 40px;
 			height: 45px;	
 			background-color: $color-main;
-			background-image: url('../icons/usd.png');
+			background-image: url('../img/$.png');
 			background-size: 60%;
 			background-position: center;
 			border: 2px solid white;	
-			box-shadow: 0 0 20px rgba(0,0,0,.5);	
+			box-shadow: 0 0 20px rgba(0,0,0,.5);
+			transition:  .3s;
+
+			&:hover {
+				background-color: white;
+				border-color: $color-main;
+				background-image: url('../img/$-.png');
+			}
+
+			@include large-screen() {
+				width: 54px;
+				height: 57px;
+			}	
 		}
-
 	}
-
 }
 
 .logo {
 	max-width: 265px;
 	height: 40px;
 
+	@include extra-large-screen() {
+		max-width: 290px;
+		height: 45px;
+	}
+
 	&__pic {
 		width: 100%;
 		height: auto;
+		display: block;	
 	}
 }
 
 .banner {
 
-			&__item {
-				background-repeat: no-repeat;
-				background-size: cover;
-				height: 195px;
+	&__item {
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 195px;
 
-				&:first-child {
-					background-image: url('../img/header-banner1.png');	
-				}
+		@include medium-screen {
+			height: 315px;
+		}
 
-				&:last-child {
-					background-image: url('../img/header-banner2.png');				
-				}
-			}
+		&:first-child {
+			background-image: url('../img/header-banner1.png');	
+		}
+
+		&:last-child {
+			background-image: url('../img/header-banner2.png');				
+		}
 	}
-
-.testBlock {
-	color: $color-main;
-	 font-family: $font-main; 
-	 font-size: 20px;
 }
+
+
+
 

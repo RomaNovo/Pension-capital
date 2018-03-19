@@ -1,0 +1,41 @@
+.banner-error {
+  padding-top: 20px;
+  background: #ffffff;
+  -webkit-box-shadow: inset -2px 15px 32px -17px rgba(0, 0, 0, 0.75);
+          box-shadow: inset -2px 15px 32px -17px rgba(0, 0, 0, 0.75); }
+  @media screen and (min-width: 1024px) {
+    .banner-error {
+      padding-top: 40px;
+      padding-bottom: 60px; } }
+  .banner-error__logo {
+    margin: 0 auto;
+    max-width: 380px;
+    height: 350px; }
+    @media screen and (min-width: 768px) {
+      .banner-error__logo {
+        max-width: 635px;
+        height: 580px; } }
+  .banner-error__pic {
+    width: 100%;
+    height: auto;
+    display: block; }
+  .banner-error__home {
+    font: 21px "ProximaRg"; }
+    @media screen and (min-width: 768px) {
+      .banner-error__home {
+        font: 36px "ProximaRg"; } }
+  .banner-error__link {
+    display: block;
+    text-align: center;
+    color: #8ab734;
+    text-decoration: none;
+    font-family: "ProximaBold"; }
+  .banner-error__title {
+    text-transform: uppercase;
+    border-bottom: 1px solid #8ab734; }
+    @media screen and (min-width: 768px) {
+      .banner-error__title {
+        border: none; } }
+  .banner-error__text {
+    color: #6a6a6a;
+    text-align: center; }
