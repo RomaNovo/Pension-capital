@@ -1,5 +1,9 @@
 .header {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  position: relative;
+  z-index: 11;
+  -webkit-box-shadow: 0px 6px 9px 0px rgba(20, 8, 20, 0.54);
+          box-shadow: 0px 6px 9px 0px rgba(20, 8, 20, 0.54); }
   .header__top {
     padding: 12px 0 12px;
     display: -webkit-box;
@@ -215,6 +219,71 @@
   .banner-error__text {
     color: #6a6a6a;
     text-align: center; }
+
+.breadCrumbs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .breadCrumbs {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+  .breadCrumbs__item {
+    margin-right: 5px; }
+  .breadCrumbs__item:not(:last-of-type):after {
+    content: " |"; }
+  .breadCrumbs__link {
+    text-decoration: none; }
+    .breadCrumbs__link_active {
+      color: red;
+      pointer-events: none; }
+
+.contacts {
+  background-color: #ffffff; }
+  .contacts__content {
+    padding-top: 30px; }
+  .contacts__info {
+    margin: 0 auto;
+    max-width: 370px; }
+
+.info__title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 25px;
+  font: 30px "ProximaBold";
+  color: #8ab734;
+  text-align: center; }
+
+.info__elem {
+  margin: 0 auto; }
+
+.info .info__text_cont:before, .info .info__text_phone:before, .info .info__text_mail:before {
+  content: '';
+  margin-right: 10px;
+  width: 20px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
+.info__text {
+  font: 18px "ProximaRg";
+  color: #838383;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px; }
+  .info__text_cont:before {
+    background-image: url("../icons/maps.png"); }
+  .info__text_phone:before {
+    background-image: url("../icons/tel-contact.png"); }
+  .info__text_mail:before {
+    background-image: url("../icons/mail-contact.png"); }
 
 /* ----------------------------- Fonts ------------------------------- */
 @font-face {
