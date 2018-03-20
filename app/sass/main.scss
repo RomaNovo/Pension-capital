@@ -48,7 +48,7 @@
 body {
 	@extend %reset;
 	background-image: url('../img/background.jpg');	
-	background-size: cover;  
+	background-size: contain;  
 } 
 
 * {
@@ -63,17 +63,7 @@ body {
 .container {
 	margin: 0 auto;
 	padding: 0 20px;
-
-	@include large-screen() {
-		// padding: 0 30px; add header__top - js: sp-btw;
-	}
-
-	@include extra-large-screen() {
-		padding: 0;
-		max-width: 1200px;	
-	}
-
-
+	max-width: 1200px;
 }
 
 /* ----------------------------- General ----------------------------- */
@@ -146,7 +136,7 @@ body {
 		&_open:last-child {					
 			top: 0px;
 			transform: rotate(135deg);
-			background-color: orange;
+			background-color: $font-clrM;
 		} 
 	}	
 }
