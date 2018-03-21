@@ -1,19 +1,13 @@
 .above-footer {
-	padding-top: 40px;
-	padding-bottom: 50px;
-	background-color: white;
-
-	@include large-screen() {
-		padding-bottom: 65px;
-	}
-
+		
 	&__title {
+		padding-top: 40px;
 		text-align: center;
 		font-family: $font-main;
 		font-size: 100px;
 		color: $color-main;
 	}
-
+	
 	&__text {
 		margin: 0 auto;
 		max-width: 355px;
@@ -25,6 +19,11 @@
 
 	&__social {
 		padding-top: 35px;
+		padding-bottom: 50px;
+		
+		@include large-screen() {
+			padding-bottom: 65px;
+		}
 	}
 }
 

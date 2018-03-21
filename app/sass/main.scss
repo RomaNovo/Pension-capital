@@ -6,6 +6,7 @@
 @import 'partial/footer';
 @import '404';
 @import 'contact';
+@import 'unic';
 
 /* ----------------------------- Fonts ------------------------------- */
 
@@ -48,7 +49,7 @@
 body {
 	@extend %reset;
 	background-image: url('../img/background.jpg');	
-	background-size: contain;  
+	background-size: 700px;  
 } 
 
 * {
@@ -64,6 +65,54 @@ body {
 	margin: 0 auto;
 	padding: 0 20px;
 	max-width: 1200px;
+	background-color: $color-white;
+
+	&_unic {
+    	background-image: url('../img/background.jpg'); 
+    	background-size: contain;
+
+    	@include medium-screen() {
+    		background-image: none;
+    	}
+	}
+}
+
+.breadCrumbs {
+    margin: 0;
+    padding: 0;
+    display: none;
+    list-style-type: none;
+   
+
+    @include medium-screen() {
+        display: flex;
+    }
+
+    @include large-screen() {   
+        padding: 0 20px;    
+    }
+
+    &__item {
+        margin-right: 5px;
+        padding: 20px 0;
+    }
+
+    &__item:not(:last-of-type):after {
+        content: " |";
+
+    }
+
+    &__link {  
+        text-decoration: none;
+        font: 18.3px $font-main;
+        color: $font-clrM;
+
+        &_active {
+          color: red;
+          pointer-events: none;
+          color: #353535;
+        }
+    }
 }
 
 /* ----------------------------- General ----------------------------- */
@@ -337,5 +386,12 @@ body {
 }
 
 
+.google-maps {
+	max-width: 1920px; 
+	height: 320px;
 
+	@include medium-screen() {
+		height: 400px;
+	}
+}
 
