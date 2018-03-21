@@ -5,6 +5,8 @@
 @import 'partial/above-footer';
 @import 'partial/footer';
 @import '404';
+@import 'contact';
+@import 'unic';
 
 /* ----------------------------- Fonts ------------------------------- */
 
@@ -47,7 +49,7 @@
 body {
 	@extend %reset;
 	background-image: url('../img/background.jpg');	
-	background-size: cover;  
+	background-size: 700px;  
 } 
 
 * {
@@ -62,17 +64,55 @@ body {
 .container {
 	margin: 0 auto;
 	padding: 0 20px;
+	max-width: 1200px;
+	background-color: $color-white;
 
-	@include large-screen() {
-		// padding: 0 30px; add header__top - js: sp-btw;
+	&_unic {
+    	background-image: url('../img/background.jpg'); 
+    	background-size: contain;
+
+    	@include medium-screen() {
+    		background-image: none;
+    	}
 	}
+}
 
-	@include extra-large-screen() {
-		padding: 0;
-		max-width: 1200px;	
-	}
+.breadCrumbs {
+    margin: 0;
+    padding: 0;
+    display: none;
+    list-style-type: none;
+   
 
+    @include medium-screen() {
+        display: flex;
+    }
 
+    @include large-screen() {   
+        padding: 0 20px;    
+    }
+
+    &__item {
+        margin-right: 5px;
+        padding: 20px 0;
+    }
+
+    &__item:not(:last-of-type):after {
+        content: " |";
+
+    }
+
+    &__link {  
+        text-decoration: none;
+        font: 18.3px $font-main;
+        color: $font-clrM;
+
+        &_active {
+          color: red;
+          pointer-events: none;
+          color: #353535;
+        }
+    }
 }
 
 /* ----------------------------- General ----------------------------- */
@@ -145,7 +185,7 @@ body {
 		&_open:last-child {					
 			top: 0px;
 			transform: rotate(135deg);
-			background-color: orange;
+			background-color: $font-clrM;
 		} 
 	}	
 }
@@ -346,5 +386,12 @@ body {
 }
 
 
+.google-maps {
+	max-width: 1920px; 
+	height: 320px;
 
+	@include medium-screen() {
+		height: 400px;
+	}
+}
 

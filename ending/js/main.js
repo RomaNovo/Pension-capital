@@ -16,3 +16,14 @@ icon.addEventListener('click', function() {
 
 })
  
+/*window.onload = function() {
+	function initMap() {
+    var coordinates = {lat: 50.453855, lng:30.488285 },
+    
+        map = new google.maps.Map(document.getElementById('google-maps'), {
+            center: coordinates
+        });
+	}
+	initMap()
+}*/
+ 

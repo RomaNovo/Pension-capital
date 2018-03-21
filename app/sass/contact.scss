@@ -1,0 +1,117 @@
+@import 'variables';
+@import 'mixins';
+@import 'partial/form';
+
+
+
+.contacts {
+   
+    &__content {
+        padding: 30px 0 5px;
+
+        @include medium-screen() {
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+
+        @include large-screen() {
+            display: flex;
+            padding: 0 20px 60px 20px;
+            justify-content: space-between;
+        }   
+    }
+
+    &__info {
+        margin: 0 auto;
+        
+        @include large-screen() {
+            margin: 0;
+            padding: 0;    
+        }
+
+    }   
+ 
+    &__form {
+        margin-top: 40px;
+     
+        @include medium-screen() {
+            margin-top: 25px;
+        }
+
+        @include large-screen() {
+            margin-top: 0;
+        }
+    }   
+}
+
+.info {
+    margin: 0 auto;
+    max-width: 370px; 
+    
+    &__title {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 25px;
+        font: 30px $font-mainBold;
+        color: $color-main;
+        text-align: center;
+
+        @include medium-screen() {
+            padding-bottom: 25px;
+        }
+
+        @include large-screen() {
+            text-align: left;
+        }
+
+    }
+
+    &__elem {
+        margin: 0 auto;
+        padding-left: 25px;
+
+     @include medium-screen() {
+         padding: 0;
+     }
+
+    }
+
+    %set {
+        content: '';
+        margin-right: 15px;
+        width: 20px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle; 
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    &__text {
+        font: 18px $font-main;
+        color: #838383;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 10px;
+
+        &_cont:before { 
+            @extend %set;
+            background-image: url('../icons/maps.png');      
+        }
+
+        &_phone:before { 
+            @extend %set;
+            background-image: url('../icons/tel-contact.png');      
+        }
+
+        &_mail:before { 
+            @extend %set;
+            background-image: url('../icons/mail-contact.png');      
+        }
+    }
+}
+
+
+
+
