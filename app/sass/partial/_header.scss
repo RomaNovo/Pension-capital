@@ -11,9 +11,32 @@
 		align-items: center;
 		
 		
+
 		@include large-screen() {
 			justify-content: space-around;
+			
+			display: none; 
 		}
+
+		@include extra-large-screen() {
+			
+			display: none; 
+		}
+
+		 &_other {
+		
+			@include large-screen() {
+				justify-content: space-around;	
+				display: flex; 
+			}
+		
+			@include extra-large-screen() {
+				display: flex; 
+			}
+		} 
+
+		
+
 	}
 
 	&__burger-menu {	
@@ -39,19 +62,15 @@
 	}
 
 	&__logo {
+		margin-right: -2px;
+		max-width: 265px;
+		height: 40px;
 		display: flex;
 		align-items: center;
-		margin-right: -2px;
-	}
-
-	&__banner {
-		width: 100%;
-		display: flex;
-		flex-flow: column;	
-		box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.42);
-
-		@include medium-screen() {
-			box-shadow: none;
+	
+		@include extra-large-screen() {
+			max-width: 290px;
+			height: 45px;
 		}
-	}	
+	}
 }
