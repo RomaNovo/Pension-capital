@@ -1,0 +1,76 @@
+@import 'variables';
+@import 'mixins';
+@import 'partial/form';
+
+.all-news {
+
+	&__title {
+		margin: 0;
+		padding: 30px 0 0;
+		font: 30px $font-mainBold;
+		text-align: center;
+		color: $color-main;
+	}
+
+	&__data-store {
+
+	}
+
+	.data-store {
+		margin: 0;
+		padding: 0;
+
+		&__item {
+			list-style-type: none;
+			font: 18px $font-main;
+			color: $font-clrT;
+		}
+
+		&__month {
+
+		}
+
+		.month {
+
+			&__group {
+
+			}
+
+			&__item {
+				
+
+				
+			}
+
+			&__link {
+				text-decoration: none;
+				color: $font-clrT;
+
+				&_active {
+					color: $color-main;
+					font: 18px $font-mainBold;
+				}
+			}
+		}
+
+		&__year {
+
+			.year {
+
+				&__item  {
+
+				}
+
+				&__link {
+					text-decoration: none;
+					color: $font-clrT;	
+					
+					&_active {
+						color: $color-main;
+						font: 18px $font-mainBold;
+					}
+				}
+			}
+		}
+	}
+}
