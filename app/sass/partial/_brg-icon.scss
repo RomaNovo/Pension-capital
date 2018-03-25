@@ -1,0 +1,46 @@
+.brg-icon {
+	margin: 0 auto;
+	width: 48px;
+	height: 36px;
+	position: relative;	
+	cursor: pointer;		
+					
+	&__elem {
+		margin: auto;
+		width: 48px;
+		height: 6px;
+		display: block;
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background-color: $color-main;
+		line-height: 36px;
+		transition: .25s ease-in-out;
+
+		&_menu-block {
+			background-color: $font-clrM;
+		}
+											
+		&:first-child {
+			top: -30px;
+		}
+
+		&:last-child {
+			top: 29px;
+		}
+
+		&_open:first-child {
+			top: 0px;
+			transform: rotate(-135deg);
+		}
+						
+		&_open:nth-child(2) {
+			opacity: 0;
+		}
+						
+		&_open:last-child {					
+			top: 0px;
+			transform: rotate(135deg);
+			background-color: $font-clrM;
+		} 
+	}	
+}

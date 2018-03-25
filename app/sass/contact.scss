@@ -112,6 +112,13 @@
     }
 }
 
+.google-maps {
+    max-width: 1920px; 
+    height: 320px;
 
+    @include medium-screen() {
+        height: 400px;
+    }
+}
 
 
